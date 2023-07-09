@@ -59,7 +59,7 @@ def play_music(file_name, start_sec = 0): # only .ogg format
             </script>'''
 
         # 用html函数调用HTML与JS代码
-        html(html_code, height= 0 )
+        html(html_code, height= 100 )
 
 st.title(':orange[Happy Birthday!🎂]')
 answer = st.chat_input("想去到哪一年的生日：（如 2020）", )
