@@ -42,7 +42,7 @@ def play_music(file_name, start_sec = 0): # only .ogg format
             var audio = document.getElementById("myAudio");
             audio.pause();
         </script>
-        <audio id="myAudio" autoplay="true" loop="true">
+        <audio id="myAudio" autoplay="true" loop="true" controls>
             <source src="data:audio/{file_name.split('.')[-1]};base64,{b64}" type="audio/{file_name.split('.')[-1]}">
         </audio>
         <script>
