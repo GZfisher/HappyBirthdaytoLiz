@@ -48,7 +48,7 @@ def play_music(file_name, start_sec = 0): # only .ogg format
         <script>
         document.addEventListener('DOMContentLoaded', function () {{
                 function audioAutoPlay() {{
-                    var audio = document.getElementById('myaudio');
+                    var audio = document.getElementById('myAudio');
                     audio.play();
                     document.addEventListener("WeixinJSBridgeReady", function () {{
                         audio.play();
