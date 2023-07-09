@@ -46,16 +46,9 @@ def play_music(file_name, start_sec = 0): # only .ogg format
             <source src="data:audio/{file_name.split('.')[-1]};base64,{b64}" type="audio/{file_name.split('.')[-1]}">
         </audio>
         <script>
-        document.addEventListener('DOMContentLoaded', function () {{
-                function audioAutoPlay() {{
-                    var audio = document.getElementById('myAudio');
-                    audio.play();
-                    document.addEventListener("WeixinJSBridgeReady", function () {{
-                        audio.play();
-                }}, false);
-                }}
-            audioAutoPlay();
-        }});
+        document.addEventListener('touchstart', function() {{
+            document.getElementById('myAudio').play()
+        }})
         </script>
         """
 
