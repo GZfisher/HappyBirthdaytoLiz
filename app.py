@@ -17,7 +17,7 @@ html_code = f"""
 <style>
 .stApp {{
     background-image: url("data:image/jpg;base64,{b64}");
-    background-size: 100% 100%;
+    background-size: 100%;
     background-attachment: fixed;
 }}
 </style>
