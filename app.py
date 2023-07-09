@@ -45,6 +45,18 @@ def play_music(file_name, start_sec = 0): # only .ogg format
         <audio id="myAudio" autoplay="true" loop="true">
             <source src="data:audio/{file_name.split('.')[-1]};base64,{b64}" type="audio/{file_name.split('.')[-1]}">
         </audio>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {{
+                function audioAutoPlay() {{
+                    var audio = document.getElementById('myaudio');
+                    audio.play();
+                    document.addEventListener("WeixinJSBridgeReady", function () {{
+                        audio.play();
+                }}, false);
+                }}
+            audioAutoPlay();
+        }});
+        </script>
         """
 
         if start_sec is not None:
