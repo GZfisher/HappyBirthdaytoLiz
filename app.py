@@ -79,6 +79,13 @@ st.markdown('''<style>
 }
 </style>''', unsafe_allow_html=True)
 
+def display_history(startYear, endYear, text, music, pic, picText):
+    if startYear <= int(year) <= endYear:
+        with st.chat_message("user"):
+            st.markdown(text,unsafe_allow_html=True)
+            display_img(pic,picText)
+            if st.session_state.music != music:
+                play_music(music)
 
 if answer is not None:
     year = re.findall("\d+\.?\d*",answer)[0]
@@ -181,7 +188,7 @@ if answer is not None:
             display_img('2023.jpg', '难得的化妆美美哒')
             play_music('陈奕迅 - 好久不见.mp3', 14)
 
-    if int(year) < 1998:
+    if 8 < int(year) < 1998:
         with st.chat_message("user"):
             st.markdown(f'''**我知道你并不想回到你出生以后，但是只有活着，才能感受到人生的酸甜苦辣、阴晴圆缺，<br>
                      何况还有fisher陪伴着你度过慢慢余生。<br>所以，请输入1998-2023的年份吧！😊**''',unsafe_allow_html=True)
@@ -193,3 +200,11 @@ if answer is not None:
             st.markdown(f'''**前方岁月待解锁 with fisher💏👪👨‍👩‍👧‍👦**''',unsafe_allow_html=True)
             display_img('future.png','future is better')
             play_music('林俊杰-将故事写成我们.mp3')
+
+    display_history(0,8,
+                    f'''**我看你是想穿越，那就带着前世的记忆，来到这熟悉又陌生的西汉吧。<br>
+                        这里有你的刘氏王朝，刘邦即将开大来到你身边，并且给你套上盾跟你说一句：<br>
+                        生日快乐！🎂**''',
+                        '林俊杰-穿越.mp3', '西汉.jpg', '楚汉之争的不太平时代')
+    
+    
