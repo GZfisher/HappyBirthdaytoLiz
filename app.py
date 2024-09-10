@@ -202,7 +202,7 @@ if answer is not None:
             # play_music('袖手旁观.m4a')
             audio_file = open('袖手旁观.m4a', 'rb')
             audio_bytes = audio_file.read()
-            st.audio(audio_bytes, format='audio/m4a')
+            st.audio(audio_bytes, format='audio/m4a', autoplay=True)
 
     display_history(0,8,
                     f'''**我看你是想穿越，那就带着前世的记忆，来到这熟悉又陌生的西汉吧。<br>
